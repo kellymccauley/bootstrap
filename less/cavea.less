@@ -1,0 +1,281 @@
+/*
+ * Copyright (c) 2012-2013 Kelly McCauley
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* 
+
+=========== BEGIN Bootstrap =========== 
+
+*/
+
+@import "bootstrap.less";
+
+/* 
+
+===========  END Bootstrap  =========== 
+
+*/
+
+/*
+ *
+ * Cavea customizations
+ *
+ */
+
+.inline-notation (@borderColor:@code-border-color; @textColor:@code-color; @backgroundColor:@code-bg; @fontSize:@code-font-size; @fontWeight:inherit) {
+  font-size: @fontSize;
+  font-weight: @fontWeight;
+  color: @textColor;
+  background-color: @backgroundColor;
+  border: 1px solid @borderColor;
+}
+
+
+//
+// Typography
+//
+p {
+  margin: 0 0 @line-height-computed;
+}
+
+h1, .h1 { 
+  font-size: @font-size-h1; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h1 * @font-size-scale-tablet));
+  }
+}
+h2, .h2 { 
+  font-size: @font-size-h2; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h2 * @font-size-scale-tablet));
+  }
+}
+h3, .h3 { 
+  font-size: @font-size-h3; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h3 * @font-size-scale-tablet));
+  }
+}
+h4, .h4 { 
+  font-size: @font-size-h4; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h4 * @font-size-scale-tablet));
+  }
+}
+h5, .h5 { 
+  font-size: @font-size-h5; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h5 * @font-size-scale-tablet));
+  }
+}
+h6, .h6 { 
+  font-size: @font-size-h6; 
+  @media (min-width: @container-tablet) {
+    font-size: ceil((@font-size-h6 * @font-size-scale-tablet));
+  }
+}
+ 
+h1 {
+  margin-top: (@line-height-computed * 2.5);
+  margin-bottom: (@line-height-computed * 1.5);
+}
+
+h2,
+h3 {
+  margin-top: (@line-height-computed * 2);
+  margin-bottom: (@line-height-computed * 1.25);
+}
+
+h4,
+h5,
+h6 {
+  color: @headings-minor-color;
+  margin-top: (@line-height-computed * 1.5);
+  margin-bottom: (@line-height-computed * 1.25);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  a {
+    color: @headings-link-color;
+    &:hover,
+    &:focus {
+      color: @headings-link-color;
+    }
+  }
+
+  small {
+    color: @headings-minor-color;
+  }
+}
+
+h1 small { font-size: @font-size-h1-small; }
+h2 small { font-size: @font-size-h2-small; }
+h3 small { font-size: @font-size-h3-small; }
+h4 small { font-size: @font-size-h4-small; }
+
+
+.copyright {
+  color: @copyright-color;
+}
+
+//
+// Notation
+//
+
+code,
+pre {
+  font-size: @code-font-size;
+  color: @code-color;
+}
+
+code {
+  padding: 1px 4px;
+  margin: 0 1px 0 0;
+  .inline-notation (@code-border-color; @code-color; @code-bg; @code-font-size; @code-font-weight);
+
+  code, sub, sup {
+    margin: 0 0 0 0;
+    font-size: (@code-font-size * 0.60);
+  }
+
+}
+
+/* Denotes rolling a die or level pool. */
+code.r {
+  .inline-notation (@r-border-color; @r-color; @r-bg);
+}
+
+/* Denotes a die. */
+code.d {
+  .inline-notation (@d-border-color; @d-color; @d-bg);
+}
+
+/* Denotes a level pool. */
+code.lp {
+  .inline-notation (@lp-border-color; @lp-color; @lp-bg);
+}
+
+
+blockquote {
+  font-size: @font-size-base;
+  border-left: 5px solid @gray-lighter;
+
+  p {
+    font-size: (@font-size-base * 1.10);
+  }
+}
+
+
+.panel {
+  margin-bottom: 40px;
+}
+
+.panel-example {
+  border-color: @panel-example-border-color;
+  color: @panel-example-color;
+
+  .panel-heading {
+    color: @panel-example-heading-color;
+    border-color: @panel-example-border-color;
+    background-color: @panel-example-heading-bg;
+  }
+
+}
+
+.panel-figure {
+  color: @panel-figure-color;
+  border-color: @panel-figure-border-color;
+  background-color: @panel-figure-bg;
+
+  .panel-heading {
+    color: @panel-figure-caption-color;
+    background-color: @panel-figure-caption-bg;
+    border-color: @panel-figure-border-color;
+  }
+
+  .panel-footer {
+    color: @panel-figure-caption-color;
+    border-color: @panel-figure-border-color;
+    background-color: @panel-figure-caption-bg;
+
+  }
+
+}
+
+.header {
+  margin-bottom: (@line-height-computed * 1.1);
+  margin-top: (@line-height-computed * 1.1);
+}
+
+.footer {
+  margin-top: (@line-height-computed * 2.5);
+  margin-bottom: (@line-height-computed * 1.5);
+}
+
+
+// Posts
+//
+
+.post-article {
+  .post-article-heading {
+    font-size: @post-article-heading-font-size;
+    font-weight: @post-article-heading-font-weight;
+    text-align: center;
+
+    @media (min-width: @container-tablet) {
+      font-size: ceil((@post-article-heading-font-size * @font-size-scale-tablet));
+    }
+
+    margin: 0 0 8px;
+  }
+
+  .post-article-by {
+    font-size: @post-article-by-font-size;
+    color: @post-article-by-color;
+    text-align: center;
+  }
+
+}
+
+.post-summary {
+
+  .post-summary-teaser {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: @post-summary-heading-font-size;
+    font-weight: @post-summary-heading-font-weight;
+    color: @post-summary-heading-color;
+    text-align: center;
+    margin: 0 0 8px;
+
+    @media (min-width: @container-tablet) {
+      font-size: ceil((@post-summary-heading-font-size * @font-size-scale-tablet));
+    }
+
+  }
+
+  .post-summary-by {
+      font-size: @post-summary-by-font-size;
+      color: @post-summary-by-color;
+  }
+
+}
+
+
+
+
+

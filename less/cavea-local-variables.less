@@ -1,0 +1,246 @@
+//
+// Copyright (c) 2012-2013 Kelly McCauley
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+//
+// Local Variables
+// --------------------------------------------------
+
+//
+// Theme colors
+//
+
+@almostBlack:     #0a0c09;
+@almostWhite:     #f7f7f9;
+
+// max hue = 360
+// hue step of 51.28
+
+@hueRed:       6;
+@hueYellow:   57;
+@hueGreen:    108;
+@hueCyan:     159;
+@hueBlue:     210;
+@huePurple:   261;
+@hueMagenta:  312;
+
+
+@centerRed:       hsv(@hueRed,      100%, 46%);
+@centerYellow:    hsv(@hueYellow,   100%, 46%);
+@centerGreen:     hsv(@hueGreen,    100%, 46%);
+@centerCyan:      hsv(@hueCyan,     100%, 46%);
+@centerBlue:      hsv(@hueBlue,     100%, 46%);
+@centerPurple:    hsv(@huePurple,   100%, 46%);
+@centerMagenta:   hsv(@hueMagenta,  100%, 46%);
+
+@darkRed:         hsv(@hueRed,      100%, 16%);
+@darkYellow:      hsv(@hueYellow,   100%, 16%);
+@darkGreen:       hsv(@hueGreen,    100%, 16%);
+@darkCyan:        hsv(@hueCyan,     100%, 16%);
+@darkBlue:        hsv(@hueBlue,     100%, 16%);
+@darkPurple:      hsv(@huePurple,   100%, 16%);
+@darkMagenta:     hsv(@hueMagenta,  100%, 16%);
+
+@brightRed:       hsv(@hueRed,      100%, 76%);
+@brightYellow:    hsv(@hueYellow,   100%, 76%);
+@brightGreen:     hsv(@hueGreen,    100%, 76%);
+@brightCyan:      hsv(@hueCyan,     100%, 76%);
+@brightBlue:      hsv(@hueBlue,     100%, 76%);
+@brightPurple:    hsv(@huePurple,   100%, 76%);
+@brightMagenta:   hsv(@hueMagenta,  100%, 76%);
+
+@brighterRed:       hsv(@hueRed,      100%, 100%);
+@brighterYellow:    hsv(@hueYellow,   100%, 100%);
+@brighterGreen:     hsv(@hueGreen,    100%, 100%);
+@brighterCyan:      hsv(@hueCyan,     100%, 100%);
+@brighterBlue:      hsv(@hueBlue,     100%, 100%);
+@brighterPurple:    hsv(@huePurple,   100%, 100%);
+@brighterMagenta:   hsv(@hueMagenta,  100%, 100%);
+
+
+@dullRed:         hsv(@hueRed,       50%, 46%);
+@dullYellow:      hsv(@hueYellow,    50%, 46%);
+@dullGreen:       hsv(@hueGreen,     50%, 46%);
+@dullCyan:        hsv(@hueCyan,      50%, 46%);
+@dullBlue:        hsv(@hueBlue,      50%, 46%);
+@dullPurple:      hsv(@huePurple,    50%, 46%);
+@dullMagenta:     hsv(@hueMagenta,   50%, 46%);
+
+@darkDullRed:     hsv(@hueRed,       50%, 16%);
+@darkDullYellow:  hsv(@hueYellow,    50%, 16%);
+@darkDullGreen:   hsv(@hueGreen,     50%, 16%);
+@darkDullCyan:    hsv(@hueCyan,      50%, 16%);
+@darkDullBlue:    hsv(@hueBlue,      50%, 16%);
+@darkDullPurple:  hsv(@huePurple,    50%, 16%);
+@darkDullMagenta: hsv(@hueMagenta,   50%, 16%);
+
+@lightRed:        hsv(@hueRed,       50%, 76%);
+@lightYellow:     hsv(@hueYellow,    50%, 76%);
+@lightGreen:      hsv(@hueGreen,     50%, 76%);
+@lightCyan:       hsv(@hueCyan,      50%, 76%);
+@lightBlue:       hsv(@hueBlue,      50%, 76%);
+@lightPurple:     hsv(@huePurple,    50%, 76%);
+@lightMagenta:    hsv(@hueMagenta,   50%, 76%);
+
+@lighterRed:      hsv(@hueRed,       50%, 100%);
+@lighterYellow:   hsv(@hueYellow,    50%, 100%);
+@lighterGreen:    hsv(@hueGreen,     50%, 100%);
+@lighterCyan:     hsv(@hueCyan,      50%, 100%);
+@lighterBlue:     hsv(@hueBlue,      50%, 100%);
+@lighterPurple:   hsv(@huePurple,    50%, 100%);
+@lighterMagenta:  hsv(@hueMagenta,   50%, 100%);
+
+@barelyRed:       hsv(@hueRed,       10%, 100%);
+@barelyYellow:    hsv(@hueYellow,    10%, 100%);
+@barelyGreen:     hsv(@hueGreen,     10%, 100%);
+@barelyCyan:      hsv(@hueCyan,      10%, 100%);
+@barelyBlue:      hsv(@hueBlue,      10%, 100%);
+@barelyPurple:    hsv(@huePurple,    10%, 100%);
+@barelyMagenta:   hsv(@hueMagenta,   10%, 100%);
+
+
+
+@hueAltRed:      32;
+@hueAltYellow:   83;
+@hueAltGreen:   134;
+@hueAltCyan:    185;
+@hueAltBlue:    236;
+@hueAltPurple:  287;
+@hueAltMagenta: 338;
+
+@altRed:       hsv(@hueAltRed,      100%, 46%);
+@altYellow:    hsv(@hueAltYellow,   100%, 46%);
+@altGreen:     hsv(@hueAltGreen,    100%, 46%);
+@altCyan:      hsv(@hueAltCyan,     100%, 46%);
+@altBlue:      hsv(@hueAltBlue,     100%, 46%);
+@altPurple:    hsv(@hueAltPurple,   100%, 46%);
+@altMagenta:   hsv(@hueAltMagenta,  100%, 46%);
+
+@brighterAltRed:       hsv(@hueAltRed,      100%, 100%);
+@brighterAltYellow:    hsv(@hueAltYellow,   100%, 100%);
+@brighterAltGreen:     hsv(@hueAltGreen,    100%, 100%);
+@brighterAltCyan:      hsv(@hueAltCyan,     100%, 100%);
+@brighterAltBlue:      hsv(@hueAltBlue,     100%, 100%);
+@brighterAltPurple:    hsv(@hueAltPurple,   100%, 100%);
+@brighterAltMagenta:   hsv(@hueAltMagenta,  100%, 100%);
+
+
+// Brand colors
+// -------------------------
+
+@brand-primary:         @darkGreen;
+@brand-success:         @brightGreen;
+@brand-warning:         @brightYellow;
+@brand-danger:          @brightRed;
+@brand-info:            @brightBlue;
+
+
+
+// Scaffolding
+// -------------------------
+
+@body-bg:               @almostWhite;
+@text-color:            @almostBlack;
+
+// Links
+// -------------------------
+@link-color:            @dullCyan;
+@link-hover-color:      @darkDullCyan;
+
+@font-family-sans-serif:  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-monospace:   "DejaVu Sans Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+@font-size-base:          15px;
+@font-size-scale-tablet:  1.40;
+
+@font-size-large:         ceil((@font-size-base * 1.25));
+@font-size-small:         ceil((@font-size-base * 0.85));
+
+@font-size-h1:            ceil((@font-size-base * 1.50));
+@font-size-h2:            ceil((@font-size-base * 1.35));
+@font-size-h3:            ceil((@font-size-base * 1.20));
+@font-size-h4:            ceil((@font-size-base * 1.05));
+@font-size-h5:            @font-size-base;
+@font-size-h6:            @font-size-base;
+
+@line-height-base:        (20 / unit(@font-size-base));
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+
+@headings-minor-color:    @darkGreen;
+
+@headings-link-color:     @text-color;
+
+// Parts and Misc
+//
+
+@copyright-color:                     @gray;
+
+
+// Posts
+//
+
+@post-summary-heading-font-size:    ceil((@font-size-base * 1.1));
+@post-summary-heading-font-weight:  bold;
+@post-summary-heading-color:        @text-color;
+@post-summary-by-font-size:         @font-size-base;
+@post-summary-by-color:             @gray;
+
+@post-article-heading-font-size:    ceil((@font-size-base * 1.35));
+@post-article-heading-font-weight:  bold;
+@post-article-by-font-size:         @font-size-base;
+@post-article-by-color:             @gray;
+
+
+// Custom panels
+//
+
+@panel-example-border-color:    @dullPurple;
+@panel-example-color:           #000;
+@panel-example-heading-color:   @gray;
+@panel-example-heading-bg:      @barelyPurple;
+
+@panel-figure-bg:               #fff;
+@panel-figure-border-color:     @gray-dark;
+@panel-figure-color:            #000;
+@panel-figure-caption-color:    #000;
+@panel-figure-caption-bg:       @gray-lighter;
+
+
+// Code
+//
+
+@pre-bg:                @almostWhite;
+@pre-border-color:      @gray-darker;
+
+@code-font-size:        (@font-size-base - 2.5);
+@code-font-weight:      inherit;
+@code-border-color:     @gray-darker;
+@code-color:            #000;
+@code-bg:               @almostWhite;
+
+@r-border-color:        @darkRed;
+@r-color:               #000;
+@r-bg:                  @barelyRed;
+
+@d-border-color:        @darkBlue;
+@d-color:               #000;
+@d-bg:                  @barelyBlue;
+
+@lp-border-color:        @darkPurple;
+@lp-color:               #000;
+@lp-bg:                  @barelyPurple;
+
+
