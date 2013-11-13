@@ -1,17 +1,17 @@
 {
-    "name": "cavea-bootstrap"
+    "name": "bootstrap"
   , "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development."
-  , "version": "3.0.1"
-  , "keywords": ["cavea", "bootstrap", "css"]
-  , "homepage": "http://caveagames.com"
-  , "author": "Cavea Less: Kelly A. McCauley; Bootstrap: Twitter, Inc."
+  , "version": "3.0.2"
+  , "keywords": ["bootstrap", "css"]
+  , "homepage": "http://getbootstrap.com"
+  , "author": "Twitter, Inc."
   , "scripts": { "test": "grunt test" }
   , "repository": {
       "type": "git"
-    , "url": "https://github.com/kellymccauley/cavea-bootstrap.git"
+    , "url": "https://github.com/twbs/bootstrap.git"
   }
   , "bugs": {
-      "url": "https://github.com/kellymccauley/cavea-bootstrap/issues"
+      "url": "https://github.com/twbs/bootstrap/issues"
   }
   , "licenses": [
     {
