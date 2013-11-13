@@ -67,22 +67,13 @@ h3, .h3 {
   .set-font-size(@font-size-h3);
 }
 h4, .h4 { 
-  font-size: @font-size-h4; 
-  @media (min-width: @container-tablet) {
-    font-size: ceil((@font-size-h4 * @font-size-scale-tablet));
-  }
+  .set-font-size(@font-size-h4);
 }
 h5, .h5 { 
-  font-size: @font-size-h5; 
-  @media (min-width: @container-tablet) {
-    font-size: ceil((@font-size-h5 * @font-size-scale-tablet));
-  }
+  .set-font-size(@font-size-h5);
 }
 h6, .h6 { 
-  font-size: @font-size-h6; 
-  @media (min-width: @container-tablet) {
-    font-size: ceil((@font-size-h6 * @font-size-scale-tablet));
-  }
+  .set-font-size(@font-size-h6);
 }
  
 h1 {
@@ -168,7 +159,6 @@ section > section > section > section {
 section > section > section > section > section {
   h1, .h1 { 
     .set-font-size(@font-size-base);
-    // .set-font-size((@font-size-h1 * 0.6));
   }
   // h2, .h2 { 
   //   .set-font-size(@font-size-base);
@@ -181,6 +171,12 @@ section > section > section > section > section {
 //
 // Notation
 //
+
+/* Denotes a die. */
+span.d {
+  color: @d-color;
+  font-weight: 500;
+}
 
 code,
 pre {
@@ -203,11 +199,6 @@ code {
 /* Denotes rolling a die or level pool. */
 code.r {
   .inline-notation (@r-border-color; @r-color; @r-bg);
-}
-
-/* Denotes a die. */
-code.d {
-  .inline-notation (@d-border-color; @d-color; @d-bg);
 }
 
 /* Denotes a level pool. */
