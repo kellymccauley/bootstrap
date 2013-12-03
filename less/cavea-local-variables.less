@@ -160,13 +160,13 @@
 @font-family-sans-serif:  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-monospace:   "DejaVu Sans Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 
-@font-size-base:          16px;
+@font-size-base:          15px;
 @font-size-scale-tablet:  1.50;
 
 @font-size-large:         ceil((@font-size-base * 1.25));
 @font-size-small:         ceil((@font-size-base * 0.85));
 
-@font-size-h1:            ceil((@font-size-base * 1.50));
+@font-size-h1:            ceil((@font-size-base * 1.70));
 @font-size-h2:            ceil((@font-size-base * 1.35));
 @font-size-h3:            ceil((@font-size-base * 1.20));
 @font-size-h4:            ceil((@font-size-base * 1.05));
@@ -195,6 +195,10 @@
 //
 @title-font-family:           'Cinzel';
 @title-font-weight:           bold;
+@title-font-size:             @font-size-h1;
+@subtitle-font-family:        'Cinzel';
+@subtitle-font-weight:        bold;
+@subtitle-font-size:          @font-size-base;
 
 // Headings
 //
@@ -217,7 +221,13 @@
 // Parts and Misc
 //
 
-@copyright-color:                     @gray;
+@book-part-border-color:      @gray-light;
+@book-part-padding-top:       ((@line-height-computed * 2.0));
+@book-part-padding-bottom:    ((@line-height-computed * 2.0));
+// @book-part-margin-top:        ((@line-height-computed * 2.5));
+// @book-part-margin-bottom:     0;
+
+@copyright-color:             @gray;
 
 
 // Posts

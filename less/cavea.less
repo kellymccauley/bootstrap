@@ -33,8 +33,17 @@
  * Cavea customizations
  *
  */
+.set-font-size (@fontSize) {
+  @media (max-width: @container-desktop) {
+    font-size: ceil((@fontSize * @font-size-scale-tablet));
+  }
+  @media (min-width: @container-desktop) {
+    font-size: ceil(@fontSize); 
+  }
+}
 
 .inline-notation (@borderColor:@code-border-color; @textColor:@code-color; @backgroundColor:@code-bg; @fontSize:@code-font-size; @fontWeight:inherit) {
+  .set-font-size(@fontSize);
   font-size: @fontSize;
   font-weight: @fontWeight;
   color: @textColor;
@@ -42,13 +51,17 @@
   border: 1px solid @borderColor;
 }
 
-.set-font-size (@fontSize) {
-  font-size: ceil(@fontSize); 
-  @media (min-width: @container-tablet) {
-    font-size: ceil((@fontSize * @font-size-scale-tablet));
-  }
+
+.book-part () {
+  border-bottom: 1px solid @book-part-border-color;
+  padding-top: @book-part-padding-top;
+  padding-bottom: @book-part-padding-bottom;
 }
 
+.section-header () {
+  font-family: @section-header-font-family;
+  font-weight: @section-header-font-weight;
+}
 
 //
 // Typography
@@ -57,111 +70,187 @@ p {
   margin: 0 0 @line-height-computed;
 }
 
-h1, .h1 { 
-  .set-font-size(@font-size-h1);
-}
-h2, .h2 { 
-  .set-font-size(@font-size-h2);
-}
-h3, .h3 { 
-  .set-font-size(@font-size-h3);
-}
-h4, .h4 { 
-  .set-font-size(@font-size-h4);
-}
-h5, .h5 { 
-  .set-font-size(@font-size-h5);
-}
-h6, .h6 { 
-  .set-font-size(@font-size-h6);
-}
- 
-h1 {
-  margin-top: (@line-height-computed * 2.5);
-  margin-bottom: (@line-height-computed * 1.5);
+// h1, .h1 { 
+//   .set-font-size(@font-size-h1);
+// }
+// h2, .h2 { 
+//   .set-font-size(@font-size-h2);
+// }
+// h3, .h3 { 
+//   .set-font-size(@font-size-h3);
+// }
+// h4, .h4 { 
+//   .set-font-size(@font-size-h4);
+// }
+// h5, .h5 { 
+//   .set-font-size(@font-size-h5);
+// }
+// h6, .h6 { 
+//   .set-font-size(@font-size-h6);
+// }
+//  
+// h1 {
+//   margin-top: (@line-height-computed * 2.5);
+//   margin-bottom: (@line-height-computed * 1.5);
+// }
+// 
+// h2,
+// h3 {
+//   margin-top: (@line-height-computed * 2);
+//   margin-bottom: (@line-height-computed * 1.25);
+// }
+// 
+// h4,
+// h5,
+// h6 {
+//   color: @headings-minor-color;
+//   margin-top: (@line-height-computed * 1.5);
+//   margin-bottom: (@line-height-computed * 1.25);
+// }
+// 
+// h1, h2, h3, h4, h5, h6 {
+//   a {
+//     color: @headings-link-color;
+//     &:hover,
+//     &:focus {
+//       color: @headings-link-color;
+//     }
+//   }
+// 
+//   small {
+//     color: @headings-minor-color;
+//   }
+// }
+// 
+// h1 small { font-size: @font-size-h1-small; }
+// h2 small { font-size: @font-size-h2-small; }
+// h3 small { font-size: @font-size-h3-small; }
+// h4 small { font-size: @font-size-h4-small; }
+
+#front-cover {
+  // padding-bottom: ((@line-height-computed / 2) - 1);
+  // margin: (@line-height-computed * 2) 0 @line-height-computed;
+
+  > .title {
+    font-family: @title-font-family;
+    font-weight: @title-font-weight;
+    .set-font-size(@title-font-size);
+    text-align: center;
+    
+  }
+
+  > .subtitle {
+    font-family: @subtitle-font-family;
+    font-weight: @subtitle-font-weight;
+    .set-font-size(@subtitle-font-size);
+    text-align: center;
+  }
+
 }
 
-h2,
-h3 {
-  margin-top: (@line-height-computed * 2);
-  margin-bottom: (@line-height-computed * 1.25);
-}
+// main section h1 {
+//   font-family: @section-header-font-family;
+//   font-weight: @section-header-font-weight;
+// }
 
-h4,
-h5,
-h6 {
-  color: @headings-minor-color;
-  margin-top: (@line-height-computed * 1.5);
-  margin-bottom: (@line-height-computed * 1.25);
-}
+// main.book > .info {
+//   display: none;
+// }
 
-h1, h2, h3, h4, h5, h6 {
-  a {
-    color: @headings-link-color;
-    &:hover,
-    &:focus {
-      color: @headings-link-color;
+main.book {
+  > .info {
+    display: none;
+  }
+
+  section.cover,
+  section.acknowledgements,
+  section.information,
+  section.dedication,
+  section.toc,
+  section.lof,
+  section.lot,
+  section.preface,
+  section.chapter,
+  section.glossary,
+  section.index,
+  section.appendix {
+    .book-part
+  }
+
+  .copyright {
+    color: @copyright-color;
+  }
+
+
+  section {
+    h1.title {
+      font-family: @section-header-font-family;
+      font-weight: @section-header-font-weight;
+      .set-font-size(@font-size-h1);
+
+      .section-number {
+        padding-right: 0.5em;
+      }
     }
+
+    > section {
+      h1.title { 
+        .set-font-size((@font-size-h1 * 0.8));
+      }
+    }
+
+    > section > section {
+      h1.title { 
+        .set-font-size((@font-size-h1 * 0.6));
+      }
+    }
+
+    > section > section > section {
+      h1.title { 
+        .set-font-size((@font-size-h1 * 0.5));
+      }
+    }
+
+    > section > section > section > section {
+      h1.title { 
+        .set-font-size(@font-size-base);
+      }
+    }
+
   }
 
-  small {
-    color: @headings-minor-color;
-  }
 }
 
-h1 small { font-size: @font-size-h1-small; }
-h2 small { font-size: @font-size-h2-small; }
-h3 small { font-size: @font-size-h3-small; }
-h4 small { font-size: @font-size-h4-small; }
-
-#title {
-  font-family: @title-font-family;
-  font-weight: @title-font-weight;
-}
-
-main section h1 {
-  font-family: @section-header-font-family;
-  font-weight: @section-header-font-weight;
-}
-
-.copyright {
-  color: @copyright-color;
-}
-
-h1 .section-number {
-  padding-right: 0.5em;
-}
-
-section {
-  h1, .h1 { 
-    .set-font-size(@font-size-h1);
-  }
-}
+// section {
+//   h1, .h1 { 
+//     .set-font-size(@font-size-h1);
+//   }
+// }
 
 
-section > section {
-  h1, .h1 { 
-    .set-font-size((@font-size-h1 * 0.8));
-  }
-}
-
-section > section > section {
-  h1, .h1 { 
-    .set-font-size((@font-size-h1 * 0.6));
-  }
-}
-
-section > section > section > section {
-  h1, .h1 { 
-    .set-font-size((@font-size-h1 * 0.5));
-  }
-}
-
-section > section > section > section > section {
-  h1, .h1 { 
-    .set-font-size(@font-size-base);
-  }
-}
+// section > section {
+//   h1, .h1 { 
+//     .set-font-size((@font-size-h1 * 0.8));
+//   }
+// }
+// 
+// section > section > section {
+//   h1, .h1 { 
+//     .set-font-size((@font-size-h1 * 0.6));
+//   }
+// }
+// 
+// section > section > section > section {
+//   h1, .h1 { 
+//     .set-font-size((@font-size-h1 * 0.5));
+//   }
+// }
+// 
+// section > section > section > section > section {
+//   h1, .h1 { 
+//     .set-font-size(@font-size-base);
+//   }
+// }
 
 //
 // Notation
@@ -213,7 +302,7 @@ blockquote {
 
 
 .panel {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .panel-example {
@@ -264,13 +353,9 @@ blockquote {
 
 .post-article {
   .post-article-heading {
-    font-size: @post-article-heading-font-size;
+    .set-font-size(@post-article-heading-font-size);
     font-weight: @post-article-heading-font-weight;
     text-align: center;
-
-    @media (min-width: @container-tablet) {
-      font-size: ceil((@post-article-heading-font-size * @font-size-scale-tablet));
-    }
 
     margin: 0 0 8px;
   }
@@ -290,15 +375,11 @@ blockquote {
   }
   
   h1 {
-    font-size: @post-summary-heading-font-size;
+    .set-font-size(@post-summary-heading-font-size);
     font-weight: @post-summary-heading-font-weight;
     color: @post-summary-heading-color;
     text-align: center;
     margin: 0 0 8px;
-
-    @media (min-width: @container-tablet) {
-      font-size: ceil((@post-summary-heading-font-size * @font-size-scale-tablet));
-    }
 
   }
 
