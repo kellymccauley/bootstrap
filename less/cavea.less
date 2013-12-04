@@ -127,7 +127,7 @@ p {
 // h3 small { font-size: @font-size-h3-small; }
 // h4 small { font-size: @font-size-h4-small; }
 
-#cover-front-outside {
+#title-page {
   > .title {
     font-family: @title-font-family;
     font-weight: @title-font-weight;
@@ -159,21 +159,19 @@ main.book {
     display: none;
   }
 
-  section.cover-front-outside,
-  section.cover-front-inside,
   section.acknowledgements,
+  section.appendix,
   section.bibliography,
-  section.division,
-  section.information,
-  section.dedication,
-  section.toc,
-  section.preface,
   section.chapter,
+  section.dedication,
+  section.division,
   section.glossary,
   section.index,
-  section.appendix,
-  section.cover-back-outside,
-  section.cover-back-inside {
+  section.page-blank,
+  section.page-copyright,
+  section.page-title,
+  section.preface,
+  section.toc {
     .book-division
   }
 
@@ -228,8 +226,13 @@ main.book {
   //
   .toc {
     .toc-content {
-      nav ul {
+      ul {
         list-style: @toc-list-style;
+        padding-left: 0;
+        
+        ul {
+          padding-left: 20px;
+        }
       }
     }
   }
@@ -251,6 +254,11 @@ main.book {
     .lof-content {
       ul {
         list-style: @toc-list-style;
+        padding-left: 0;
+
+        ul {
+          padding-left: 20px;
+        }
       }
     }
   }
@@ -267,6 +275,32 @@ main.book {
       padding-right: 0.25em;
     }
   
+  }
+
+
+  .lot {
+    .lot-content {
+      ul {
+        list-style: @toc-list-style;
+        padding-left: 0;
+
+        ul {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+ 
+
+
+  // Definition Lists
+  //
+  dl.dl-horizontal {
+    dd {
+      p {
+        margin: 0 0 3px;
+      }
+    }
   }
 }
 
