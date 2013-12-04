@@ -195,10 +195,10 @@
 //
 @title-font-family:           'Cinzel';
 @title-font-weight:           bold;
-@title-font-size:             @font-size-h1;
+@title-font-size:             ((@font-size-h1 * 1.5));
 @subtitle-font-family:        'Cinzel';
 @subtitle-font-weight:        bold;
-@subtitle-font-size:          @font-size-base;
+@subtitle-font-size:          ((@font-size-h1 * 0.8));
 
 // Headings
 //
@@ -221,11 +221,11 @@
 // Parts and Misc
 //
 
-@book-part-border-color:      @gray-light;
-@book-part-padding-top:       ((@line-height-computed * 2.0));
-@book-part-padding-bottom:    ((@line-height-computed * 2.0));
-// @book-part-margin-top:        ((@line-height-computed * 2.5));
-// @book-part-margin-bottom:     0;
+@book-division-border-color:      @gray-light;
+@book-division-padding-top:       ((@line-height-computed * 2.0));
+@book-division-padding-bottom:    ((@line-height-computed * 2.0));
+// @book-division-margin-top:        ((@line-height-computed * 2.5));
+// @book-division-margin-bottom:     0;
 
 @copyright-color:             @gray;
 
