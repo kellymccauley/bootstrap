@@ -52,10 +52,10 @@
 }
 
 
-.book-part () {
-  border-bottom: 1px solid @book-part-border-color;
-  padding-top: @book-part-padding-top;
-  padding-bottom: @book-part-padding-bottom;
+.book-division () {
+  border-bottom: 1px solid @book-division-border-color;
+  padding-top: @book-division-padding-top;
+  padding-bottom: @book-division-padding-bottom;
 }
 
 .section-header () {
@@ -127,10 +127,7 @@ p {
 // h3 small { font-size: @font-size-h3-small; }
 // h4 small { font-size: @font-size-h4-small; }
 
-#front-cover {
-  // padding-bottom: ((@line-height-computed / 2) - 1);
-  // margin: (@line-height-computed * 2) 0 @line-height-computed;
-
+#cover-front-outside {
   > .title {
     font-family: @title-font-family;
     font-weight: @title-font-weight;
@@ -158,23 +155,26 @@ p {
 // }
 
 main.book {
-  > .info {
+  > .book-info {
     display: none;
   }
 
-  section.cover,
+  section.cover-front-outside,
+  section.cover-front-inside,
   section.acknowledgements,
+  section.bibliography,
+  section.division,
   section.information,
   section.dedication,
   section.toc,
-  section.lof,
-  section.lot,
   section.preface,
   section.chapter,
   section.glossary,
   section.index,
-  section.appendix {
-    .book-part
+  section.appendix,
+  section.cover-back-outside,
+  section.cover-back-inside {
+    .book-division
   }
 
   .copyright {
@@ -183,6 +183,7 @@ main.book {
 
 
   section {
+    hgroup h1.title, 
     h1.title {
       font-family: @section-header-font-family;
       font-weight: @section-header-font-weight;
@@ -194,24 +195,28 @@ main.book {
     }
 
     > section {
+      hgroup h1.title, 
       h1.title { 
         .set-font-size((@font-size-h1 * 0.8));
       }
     }
 
     > section > section {
+      hgroup h1.title, 
       h1.title { 
         .set-font-size((@font-size-h1 * 0.6));
       }
     }
 
     > section > section > section {
+      hgroup h1.title, 
       h1.title { 
         .set-font-size((@font-size-h1 * 0.5));
       }
     }
 
     > section > section > section > section {
+      hgroup h1.title, 
       h1.title { 
         .set-font-size(@font-size-base);
       }
@@ -219,6 +224,50 @@ main.book {
 
   }
 
+  // TOC
+  //
+  .toc {
+    .toc-content {
+      nav ul {
+        list-style: @toc-list-style;
+      }
+    }
+  }
+  
+  // Figures
+  //
+  figcaption {
+    text-align: @figcaption-text-align;
+    font-family: @figcaption-font-family;
+    font-weight: @figcaption-font-weight;
+  
+    .figure-number {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+    }
+  }
+  
+  .lof {
+    .lof-content {
+      ul {
+        list-style: @toc-list-style;
+      }
+    }
+  }
+  
+  // Tables
+  //
+  table > caption {
+    text-align:  @tablecaption-text-align;
+    font-family: @tablecaption-font-family;
+    font-weight: @tablecaption-font-weight;
+  
+    .table-number {
+      padding-left: 0.25em;
+      padding-right: 0.25em;
+    }
+  
+  }
 }
 
 // section {
@@ -392,47 +441,4 @@ blockquote {
 
 
 
-// TOC
-//
-.toc {
-  .toc-content {
-    nav ul {
-      list-style: @toc-list-style;
-    }
-  }
-}
 
-// Figures
-//
-figcaption {
-  text-align: @figcaption-text-align;
-  font-family: @figcaption-font-family;
-  font-weight: @figcaption-font-weight;
-
-  .figure-number {
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-  }
-}
-
-.lof {
-  .lof-content {
-    ul {
-      list-style: @toc-list-style;
-    }
-  }
-}
-
-// Tables
-//
-table > caption {
-  text-align:  @tablecaption-text-align;
-  font-family: @tablecaption-font-family;
-  font-weight: @tablecaption-font-weight;
-
-  .table-number {
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-  }
-
-}
