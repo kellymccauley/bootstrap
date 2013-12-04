@@ -88,11 +88,7 @@
 }
 // New mixin to use as of v3.0.1
 .text-hide() {
-  font: ~"0/0" a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+  .hide-text();
 }
 
 
@@ -564,9 +560,10 @@
 // More easily include all the states for responsive-utilities.less.
 .responsive-visibility() {
   display: block !important;
-  tr& { display: table-row !important; }
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
   th&,
-  td& { display: table-cell !important; }
+  td&     { display: table-cell !important; }
 }
 
 .responsive-invisibility() {
