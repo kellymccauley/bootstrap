@@ -216,7 +216,14 @@ main.book {
     > section > section > section > section {
       hgroup h1.title, 
       h1.title { 
-        .set-font-size(@font-size-base);
+        .set-font-size((@font-size-h1 * 0.5));
+      }
+    }
+
+    > section > section > section > section > section {
+      hgroup h1.title, 
+      h1.title { 
+        .set-font-size((@font-size-h1 * 0.5));
       }
     }
 
