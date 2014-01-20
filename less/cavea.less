@@ -52,8 +52,8 @@
 }
 
 
-.book-division () {
-  border-bottom: 1px solid @book-division-border-color;
+.book-division (@borderSize:2px; @borderStyle:solid; @borderColor:@book-division-border-color) {
+  border-bottom: @borderSize @borderStyle @book-division-border-color;
   padding-top: @book-division-padding-top;
   padding-bottom: @book-division-padding-bottom;
 }
@@ -162,7 +162,6 @@ main.book {
   section.acknowledgements,
   section.appendix,
   section.bibliography,
-  section.chapter,
   section.dedication,
   section.division,
   section.glossary,
@@ -172,7 +171,11 @@ main.book {
   section.page-title,
   section.preface,
   section.toc {
-    .book-division
+    .book-division;
+  }
+
+  section.chapter {
+    .book-division(1px, dashed, @book-chapter-border-color);
   }
 
   .copyright {
@@ -446,7 +449,7 @@ blockquote {
     margin-bottom: 3px;
   }
 
-  ul {
+  ul, ol {
     margin-top: 3px;
     margin-bottom: 3px;
   }
